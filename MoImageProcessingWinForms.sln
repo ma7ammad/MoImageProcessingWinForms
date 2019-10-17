@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoImageProcessingWinForms", "MoImageProcessingWinForms\MoImageProcessingWinForms.csproj", "{05C5BD08-C958-4A8A-8F0D-A8DC4F5F8A57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoImageProcessingTests", "MoImageProcessingTests\MoImageProcessingTests.csproj", "{C78D77D5-DAED-4D67-ABFB-261F2C39ED4D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoImageProcessingWinFormsTests", "MoImageProcessingWinFormsTests\MoImageProcessingWinFormsTests.csproj", "{26CB0448-9B62-4B6B-89C9-D50718387BB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{05C5BD08-C958-4A8A-8F0D-A8DC4F5F8A57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05C5BD08-C958-4A8A-8F0D-A8DC4F5F8A57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05C5BD08-C958-4A8A-8F0D-A8DC4F5F8A57}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C78D77D5-DAED-4D67-ABFB-261F2C39ED4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C78D77D5-DAED-4D67-ABFB-261F2C39ED4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C78D77D5-DAED-4D67-ABFB-261F2C39ED4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C78D77D5-DAED-4D67-ABFB-261F2C39ED4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26CB0448-9B62-4B6B-89C9-D50718387BB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26CB0448-9B62-4B6B-89C9-D50718387BB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26CB0448-9B62-4B6B-89C9-D50718387BB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26CB0448-9B62-4B6B-89C9-D50718387BB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

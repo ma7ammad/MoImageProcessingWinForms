@@ -10,8 +10,18 @@ namespace MoImageProcessingTests
         [TestMethod]
         public void TestMethod1()
         {
-            MoImageProcessing imPro = new MoImageProcessing();
-            //imPro.
+            MoImageProcessingWinForms.Processing processing;  // = new MoImageProcessing();
+            //Arrange
+            Bitmap originalImage = new Bitmap(@"C:\Users\Public\test_224_299_Image.bmp");
+            Size size = new Size(16);
+            Processing.ConvertToGray(copy);
+
+            //Act
+            Bitmap resizedImage = Processing.ResizeImage(copy, size);
+
+            //Assert
+
+
         }
     }
 }

@@ -49,6 +49,8 @@ namespace MoImageProcessingWinForms
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.FFT = new MaterialSkin.Controls.MaterialFlatButton();
+            this.IFFT = new MaterialSkin.Controls.MaterialFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.pBox)).BeginInit();
             this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -105,7 +107,7 @@ namespace MoImageProcessingWinForms
             this.OpenImagee.AutoSize = true;
             this.OpenImagee.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.OpenImagee.Depth = 0;
-            this.OpenImagee.Location = new System.Drawing.Point(372, 157);
+            this.OpenImagee.Location = new System.Drawing.Point(467, 158);
             this.OpenImagee.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.OpenImagee.MouseState = MaterialSkin.MouseState.HOVER;
             this.OpenImagee.Name = "OpenImagee";
@@ -185,7 +187,7 @@ namespace MoImageProcessingWinForms
             this.Save.AutoSize = true;
             this.Save.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Save.Depth = 0;
-            this.Save.Location = new System.Drawing.Point(470, 158);
+            this.Save.Location = new System.Drawing.Point(565, 157);
             this.Save.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Save.MouseState = MaterialSkin.MouseState.HOVER;
             this.Save.Name = "Save";
@@ -242,11 +244,45 @@ namespace MoImageProcessingWinForms
             this.toolStripComboBox1.Name = "toolStripComboBox1";
             this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
             // 
+            // FFT
+            // 
+            this.FFT.AutoSize = true;
+            this.FFT.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.FFT.Depth = 0;
+            this.FFT.Location = new System.Drawing.Point(372, 158);
+            this.FFT.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.FFT.MouseState = MaterialSkin.MouseState.HOVER;
+            this.FFT.Name = "FFT";
+            this.FFT.Primary = false;
+            this.FFT.Size = new System.Drawing.Size(35, 36);
+            this.FFT.TabIndex = 20;
+            this.FFT.Text = "FFT";
+            this.FFT.UseVisualStyleBackColor = true;
+            this.FFT.Click += new System.EventHandler(this.FFT_Click);
+            // 
+            // IFFT
+            // 
+            this.IFFT.AutoSize = true;
+            this.IFFT.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.IFFT.Depth = 0;
+            this.IFFT.Location = new System.Drawing.Point(415, 158);
+            this.IFFT.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.IFFT.MouseState = MaterialSkin.MouseState.HOVER;
+            this.IFFT.Name = "IFFT";
+            this.IFFT.Primary = false;
+            this.IFFT.Size = new System.Drawing.Size(39, 36);
+            this.IFFT.TabIndex = 21;
+            this.IFFT.Text = "IFFT";
+            this.IFFT.UseVisualStyleBackColor = true;
+            this.IFFT.Click += new System.EventHandler(this.IFFT_Click);
+            // 
             // MoImageProcessing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1023, 566);
+            this.Controls.Add(this.IFFT);
+            this.Controls.Add(this.FFT);
             this.Controls.Add(this.Save);
             this.Controls.Add(this.Convert2Gray);
             this.Controls.Add(this.Resizee);
@@ -291,6 +327,8 @@ namespace MoImageProcessingWinForms
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private MaterialSkin.Controls.MaterialFlatButton FFT;
+        private MaterialSkin.Controls.MaterialFlatButton IFFT;
     }
 }
 

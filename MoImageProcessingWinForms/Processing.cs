@@ -5,9 +5,9 @@ using System.Drawing.Drawing2D;
 
 namespace MoImageProcessingWinForms
 {
-    public class Processing
+    public static class Processing
     {
-        public static bool ConvertToGray(Bitmap b)
+        public static bool ConvertToGrey(Bitmap b)
         {
             for (int i = 0; i < b.Width; i++)
 
@@ -23,7 +23,6 @@ namespace MoImageProcessingWinForms
                     b1 = gray;
                     b.SetPixel(i, j, Color.FromArgb(r1, g1, b1));
                 }  
-            // yield return xxx;  // deferred execution sub method
             return true;
         }
 
@@ -38,7 +37,6 @@ namespace MoImageProcessingWinForms
             var newHFac = (size.Height / (float)oldH);
 
             reFactor = Math.Min(newWFac, newHFac);
-            //if (reFactor == 1) { return sourceIm; }
 
             var newW = (int)(oldW * reFactor);
             var newH = (int)(oldH * reFactor);
@@ -61,7 +59,7 @@ namespace MoImageProcessingWinForms
             {
                 if (( copy.Width - area.Width) < 8 && (copy.Height-area.Height)<8)
                 {
-                   str = "Crop Dimensions invalid, Please choose different values";
+                   str = "Crop Dimensions invalid, Please choose new valid values";
                     result.Add(str, copy);
                     return result;
                 }
@@ -79,7 +77,7 @@ namespace MoImageProcessingWinForms
             }
         }
 
-        internal static Image RotateImage(Image im, float angle)
+        public static Image RotateImage(Image im, float angle)
         {
 
             int w, h, x, y;
@@ -103,9 +101,7 @@ namespace MoImageProcessingWinForms
 
             using(var g = Graphics.FromImage(rotated))
             {
-                //g.Clear(bkColour);
-
-                //set rotation poit to centre
+                //set rotation point to centre
                 g.TranslateTransform(newCentreX, newCentreY);
 
                 //rotate

@@ -1,9 +1,8 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Drawing;
-using System.Windows.Forms;
 using System.Linq;
-using MaterialSkin.Controls;
-using System.IO;
+using System.Windows.Forms;
 
 namespace MoImageProcessingWinForms
 {
@@ -20,7 +19,7 @@ namespace MoImageProcessingWinForms
         {
             OpenFileDialog ofile = new OpenFileDialog
             {
-                Filter = "Image File (*.bmp, *.jpg)|*.bmp;*.jpg"
+                Filter = "Image File (*.bmp, *.jpg, *.gif)|*.bmp;*.jpg;*.gif"
             };
             //ofile
             if (DialogResult.OK == ofile.ShowDialog())
@@ -51,7 +50,6 @@ namespace MoImageProcessingWinForms
                 copy.Save(file.FileName);
             }
         }
-        private void pictureBox1_Click(object sender, EventArgs e){}
 
         private void Convert2Gray_Click(object sender, EventArgs e)
         {
@@ -63,8 +61,68 @@ namespace MoImageProcessingWinForms
             }
 
             Bitmap copy = new Bitmap((Bitmap)this.pBox.Image);
-            Processing.ConvertToGray(copy);
+            Processing.ConvertToGrey(copy);
             this.pBox.Image = copy;
+        }
+
+        //******************************************************************
+        //******************************************************************
+        private void FFT_Click(object sender, EventArgs e)
+        {
+            //check user has loaded an image to edit
+            if (originalImage == null)
+            {
+                MessageBox.Show("Please select a valid image");
+                return;
+            }
+            Bitmap copy = new Bitmap((Bitmap)this.pBox.Image);
+
+            try
+            {
+                // create greyscale bitmap
+                var grayScaledImage = ComplexImage.ToGrayscale(copy);
+                var complexIm = ComplexImage.ConvertBitmapImageToComplex(grayScaledImage);
+                Fourier.FFT2D(complexIm, 1);
+
+                var transformedImage = ComplexImage.ConvertComplexImageToBitmap(complexIm);
+                this.pBox.Image = transformedImage;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {0}", ex.Message);
+            }
+
+
+        }
+        //******************************************************************
+        //******************************************************************
+
+        private void IFFT_Click(object sender, EventArgs e)
+        {
+            //check user has loaded an image to edit
+            if (originalImage == null)
+            {
+                MessageBox.Show("Please select a valid image");
+                return;
+            }
+            Bitmap copy = new Bitmap((Bitmap)this.pBox.Image);
+
+            try
+            {
+                // create greyscale bitmap
+                var grayScaledImage = ComplexImage.ToGrayscale(copy);
+                var complexIm = ComplexImage.ConvertBitmapImageToComplex(grayScaledImage);
+                Fourier.FFT2D(complexIm, -1);
+                var transformedImage = ComplexImage.ConvertComplexImageToBitmap(complexIm);
+                this.pBox.Image = transformedImage;
+                //this.pBox.Image = grayScaledImage;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {0}", ex.Message);
+            }
+
+
         }
 
         private void ResizeImage_Click(object sender, EventArgs e)
@@ -226,6 +284,12 @@ namespace MoImageProcessingWinForms
         {
 
         }
+
+        private void MaterialFlatButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void pictureBox1_Click(object sender, EventArgs e){}
 
     }
 }
